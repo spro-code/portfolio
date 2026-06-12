@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" viewport="700x200" name="Motion & easing" subtitle="Confident, unhurried. Smooth deceleration; reveals rise + fade." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-card); padding: 22px 26px; font-family: var(--font-sans); }
+  .track { display: flex; flex-direction: column; gap: 14px; }
+  .lane { display: flex; align-items: center; gap: 14px; }
+  .name { font-family: var(--font-mono); font-size: 11px; color: var(--text-strong); width: 130px; flex: none; }
+  .name span { color: var(--text-faint); }
+  .rail { position: relative; flex: 1; height: 12px; background: var(--surface-sunk); border-radius: var(--r-pill); }
+  .dot { position: absolute; top: 1px; left: 1px; width: 10px; height: 10px; border-radius: 50%; background: var(--evergreen-600); }
+  .d1 { animation: run 2.6s var(--ease-out) infinite; }
+  .d2 { animation: run 2.6s var(--ease-out-expo) infinite; background: var(--clay-400); }
+  .d3 { animation: run 2.6s var(--ease-spring) infinite; background: var(--spring-500); }
+  @keyframes run { 0% { left: 1px; } 45% { left: calc(100% - 11px); } 55% { left: calc(100% - 11px); } 100% { left: 1px; } }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; left: calc(100% - 11px); } }
+</style>
+</head>
+<body>
+  <div class="track">
+    <div class="lane"><div class="name">ease-out <span>260ms</span></div><div class="rail"><div class="dot d1"></div></div></div>
+    <div class="lane"><div class="name">ease-out-expo <span>480ms</span></div><div class="rail"><div class="dot d2"></div></div></div>
+    <div class="lane"><div class="name">ease-spring <span>260ms</span></div><div class="rail"><div class="dot d3"></div></div></div>
+  </div>
+</body>
+</html>

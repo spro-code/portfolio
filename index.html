@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ideations — built on the AbleSpace Design System</title>
+<link rel="stylesheet" href="design-system/styles.css">
+<style>
+  body {
+    margin: 0;
+    background: var(--surface-page);
+    color: var(--text-strong);
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 72rem; margin: 0 auto; padding: clamp(48px, 8vw, 112px) var(--gutter, 24px); }
+  .eyebrow {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 12px;
+    color: var(--clay-600, #B5673D);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0 0 22px;
+    max-width: 18ch;
+  }
+  h1 em { color: var(--evergreen-700); font-style: italic; }
+  .lede {
+    font-size: clamp(17px, 2vw, 21px);
+    line-height: 1.6;
+    color: var(--text-muted, #61594A);
+    max-width: 52ch;
+    margin: 0 0 48px;
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface-card, #fff);
+    border: 1px solid var(--border-soft, rgba(24,22,17,0.10));
+    border-radius: var(--r-lg, 16px);
+    padding: 28px 26px;
+    box-shadow: var(--shadow-sm, 0 1px 2px rgba(24,22,17,0.06));
+    transition: transform .28s cubic-bezier(0.22,1,0.36,1), box-shadow .28s cubic-bezier(0.22,1,0.36,1);
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg, 0 14px 36px rgba(24,22,17,0.12)); }
+  .card .ico {
+    display: inline-flex; width: 44px; height: 44px; border-radius: 12px;
+    background: var(--accent-soft, #EAF3EE); color: var(--evergreen-700);
+    align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .card h2 { font-family: var(--font-display); font-weight: 500; font-size: 24px; margin: 0 0 8px; }
+  .card p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-muted, #61594A); }
+  .card .more { margin-top: 16px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--evergreen-600); }
+  .rule { border: 0; border-top: 1px solid var(--border-soft, rgba(24,22,17,0.10)); margin: 56px 0; }
+  .note { font-size: 14px; line-height: 1.6; color: var(--text-muted, #61594A); max-width: 60ch; }
+  .note code { font-family: var(--font-mono); font-size: 12.5px; background: var(--stone-100, #F4EFE5); padding: 2px 6px; border-radius: 6px; }
+</style>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">Ideations · AbleSpace Design System</p>
+    <h1>Every screen here is built on <em>one</em> system.</h1>
+    <p class="lede">This project carries the AbleSpace design language — warm paper, confident evergreen, editorial serif display, and a set of storytelling modules. Below are the loaded designs, ready to run.</p>
+
+    <div class="grid">
+      <a class="card" href="design-system/index.html">
+        <span class="ico"><i data-lucide="layout-grid"></i></span>
+        <h2>Design system gallery</h2>
+        <p>Foundations, tokens, and every component specimen card — colors, type, spacing, motion, brand.</p>
+        <div class="more">Open gallery →</div>
+      </a>
+      <a class="card" href="design-system/ui_kits/web_app/index.html">
+        <span class="ico"><i data-lucide="layout-dashboard"></i></span>
+        <h2>Web app</h2>
+        <p>Caseload dashboard, IEP goal tracking, student record, and the one-tap data-collection drawer.</p>
+        <div class="more">Open kit →</div>
+      </a>
+      <a class="card" href="design-system/ui_kits/marketing/index.html">
+        <span class="ico"><i data-lucide="newspaper"></i></span>
+        <h2>Marketing site</h2>
+        <p>Editorial, scroll-driven storytelling landing page with section reveals and a journey timeline.</p>
+        <div class="more">Open kit →</div>
+      </a>
+    </div>
+
+    <hr class="rule">
+    <p class="note">The UI kits load React, Babel, and Lucide from CDN and fetch their JSX over HTTP, so they need a local server — open this folder with <code>python3 -m http.server</code> and visit <code>localhost:8000</code> rather than opening the files directly. See <code>CLAUDE.md</code> for how new work in this project pulls from the design system.</p>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

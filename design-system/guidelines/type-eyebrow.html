@@ -1,0 +1,33 @@
+<!-- @dsCard group="Type" viewport="700x180" name="Eyebrows & mono — JetBrains Mono" subtitle="Uppercase letterspaced eyebrows and tabular figures for data." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-card); padding: 24px 28px; font-family: var(--font-sans); }
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); margin-bottom: 6px; }
+  .eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clay-500); }
+  .nums { display: flex; gap: 28px; align-items: baseline; }
+  .nums .big { font-family: var(--font-mono); font-size: 34px; font-weight: 500; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .nums .unit { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="stack">
+    <div>
+      <div class="lbl">Eyebrow — section kicker</div>
+      <div class="eyebrow">02 — User Research</div>
+    </div>
+    <div>
+      <div class="lbl">Tabular figures — metrics &amp; data</div>
+      <div class="nums">
+        <div><span class="big">87%</span> <span class="unit">on track</span></div>
+        <div><span class="big">1,204</span> <span class="unit">data points</span></div>
+        <div><span class="big">12.5h</span> <span class="unit">saved / wk</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

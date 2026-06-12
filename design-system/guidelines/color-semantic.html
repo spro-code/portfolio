@@ -1,0 +1,39 @@
+<!-- @dsCard group="Colors" viewport="700x250" name="Semantic roles" subtitle="Surfaces, text, and borders — reference these, not raw ramps." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-card); font-family: var(--font-sans); padding: 22px; color: var(--text-body); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .tok { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: var(--r-md); border: 1px solid var(--border-faint); }
+  .chip { width: 30px; height: 30px; border-radius: var(--r-sm); flex: none; box-shadow: var(--ring-card); }
+  .tok .lab { display: flex; flex-direction: column; line-height: 1.2; }
+  .tok .lab b { font-size: 12.5px; font-weight: 600; color: var(--text-strong); }
+  .tok .lab span { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+  .sec { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 10px; }
+  .sub { margin-top: 16px; }
+</style>
+</head>
+<body>
+  <div class="sec">Surfaces &amp; text</div>
+  <div class="grid">
+    <div class="tok"><div class="chip" style="background:var(--surface-page)"></div><div class="lab"><b>Page</b><span>--surface-page</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--surface-card)"></div><div class="lab"><b>Card</b><span>--surface-card</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--surface-sunk)"></div><div class="lab"><b>Sunk</b><span>--surface-sunk</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--surface-inverse)"></div><div class="lab"><b>Inverse</b><span>--surface-inverse</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--surface-brand)"></div><div class="lab"><b>Brand</b><span>--surface-brand</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--accent-soft)"></div><div class="lab"><b>Accent soft</b><span>--accent-soft</span></div></div>
+  </div>
+  <div class="sec sub">Text &amp; border</div>
+  <div class="grid">
+    <div class="tok"><div class="chip" style="background:var(--text-strong)"></div><div class="lab"><b>Strong</b><span>--text-strong</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--text-body)"></div><div class="lab"><b>Body</b><span>--text-body</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--text-muted)"></div><div class="lab"><b>Muted</b><span>--text-muted</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--text-brand)"></div><div class="lab"><b>Brand</b><span>--text-brand</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--border-soft)"></div><div class="lab"><b>Border soft</b><span>--border-soft</span></div></div>
+    <div class="tok"><div class="chip" style="background:var(--interactive)"></div><div class="lab"><b>Interactive</b><span>--interactive</span></div></div>
+  </div>
+</body>
+</html>

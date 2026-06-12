@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" viewport="700x230" name="Spacing scale" subtitle="4px base grid. Generous steps for editorial rhythm." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-card); padding: 22px 26px; font-family: var(--font-sans); }
+  .rows { display: flex; flex-direction: column; gap: 7px; }
+  .r { display: flex; align-items: center; gap: 14px; }
+  .tok { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); width: 96px; flex: none; }
+  .tok b { color: var(--text-strong); font-weight: 600; }
+  .bar { height: 14px; background: var(--evergreen-600); border-radius: 3px; }
+</style>
+</head>
+<body>
+  <div class="rows">
+    <div class="r"><span class="tok"><b>1</b> · 4px</span><div class="bar" style="width:4px"></div></div>
+    <div class="r"><span class="tok"><b>2</b> · 8px</span><div class="bar" style="width:8px"></div></div>
+    <div class="r"><span class="tok"><b>3</b> · 12px</span><div class="bar" style="width:12px"></div></div>
+    <div class="r"><span class="tok"><b>4</b> · 16px</span><div class="bar" style="width:16px"></div></div>
+    <div class="r"><span class="tok"><b>6</b> · 24px</span><div class="bar" style="width:24px"></div></div>
+    <div class="r"><span class="tok"><b>8</b> · 32px</span><div class="bar" style="width:32px"></div></div>
+    <div class="r"><span class="tok"><b>12</b> · 48px</span><div class="bar" style="width:48px"></div></div>
+    <div class="r"><span class="tok"><b>16</b> · 64px</span><div class="bar" style="width:64px"></div></div>
+    <div class="r"><span class="tok"><b>24</b> · 96px</span><div class="bar" style="width:96px"></div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Logo & wordmark" subtitle="Mark + wordmark lockup. Placeholder mark — replace with final art." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); display: grid; grid-template-columns: 1fr 1fr; }
+  .panel { padding: 28px 30px; display: flex; flex-direction: column; gap: 22px; justify-content: center; min-height: 174px; }
+  .light { background: var(--surface-page); }
+  .dark { background: var(--evergreen-900); }
+  .lockup { display: flex; align-items: center; gap: 12px; }
+  .lockup img { width: 34px; height: 34px; }
+  .word { font-family: var(--font-sans); font-weight: 700; font-size: 26px; letter-spacing: -0.02em; }
+  .word .a { color: var(--stone-900); }
+  .word .s { color: var(--evergreen-700); }
+  .dark .word .a { color: var(--stone-50); }
+  .dark .word .s { color: var(--spring-400); }
+  .markonly { display: flex; align-items: center; gap: 14px; }
+  .markonly img { width: 28px; height: 28px; }
+  .cap { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .light .cap { color: var(--text-faint); }
+  .dark .cap { color: rgba(244,239,229,0.5); }
+</style>
+</head>
+<body>
+  <div class="panel light">
+    <div class="lockup"><img src="../assets/logo-mark.svg" alt="AbleSpace mark"><span class="word"><span class="a">Able</span><span class="s">Space</span></span></div>
+    <div class="markonly"><img src="../assets/logo-mark.svg" alt="mark"><span class="cap">Mark · on paper</span></div>
+  </div>
+  <div class="panel dark">
+    <div class="lockup"><img src="../assets/logo-mark-light.svg" alt="AbleSpace mark"><span class="word"><span class="a">Able</span><span class="s">Space</span></span></div>
+    <div class="markonly"><img src="../assets/logo-mark-light.svg" alt="mark"><span class="cap">Mark · on evergreen</span></div>
+  </div>
+</body>
+</html>

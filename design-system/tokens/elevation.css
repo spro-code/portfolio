@@ -1,0 +1,62 @@
+/* ============================================================
+   AbleSpace — Elevation & Motion
+   Warm, soft, layered shadows. Confident, unhurried easing.
+   ============================================================ */
+
+:root {
+  /* Shadows — warm ink base, soft & layered */
+  --shadow-xs: 0 1px 2px rgba(15, 14, 10, 0.05);
+  --shadow-sm: 0 1px 2px rgba(15, 14, 10, 0.06), 0 1px 1px rgba(15, 14, 10, 0.04);
+  --shadow-md: 0 6px 16px -4px rgba(15, 14, 10, 0.09), 0 2px 6px -2px rgba(15, 14, 10, 0.06);
+  --shadow-lg: 0 20px 44px -14px rgba(15, 14, 10, 0.18), 0 6px 14px -8px rgba(15, 14, 10, 0.10);
+  --shadow-xl: 0 40px 80px -24px rgba(15, 14, 10, 0.26), 0 12px 28px -16px rgba(15, 14, 10, 0.14);
+
+  /* Accent glow (interactive / live moments) */
+  --glow-interactive: 0 0 0 4px var(--interactive-soft);
+  --glow-focus: 0 0 0 3px var(--focus-ring);
+
+  /* Inset (wells, pressed) */
+  --inset-soft: inset 0 1px 2px rgba(15, 14, 10, 0.06);
+
+  /* Ring helpers */
+  --ring-card: inset 0 0 0 1px var(--border-faint);
+
+  /* ---- Motion ---- */
+  --dur-instant: 90ms; /* @kind other */
+  --dur-fast: 160ms;   /* @kind other */
+  --dur: 260ms;        /* @kind other */
+  --dur-slow: 480ms;   /* @kind other */
+  --dur-reveal: 800ms; /* @kind other */
+
+  /* Easing — editorial confidence */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);        /* @kind other */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);    /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);     /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);    /* @kind other */
+  --ease-linear: linear;                             /* @kind other */
+
+  /* Standard transitions */
+  --transition-colors: color var(--dur-fast) var(--ease-out),
+                       background-color var(--dur-fast) var(--ease-out),
+                       border-color var(--dur-fast) var(--ease-out); /* @kind other */
+  --transition-transform: transform var(--dur) var(--ease-out); /* @kind other */
+  --transition-all: all var(--dur) var(--ease-out); /* @kind other */
+}
+
+/* Reveal keyframes for scroll-driven storytelling */
+@keyframes as-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes as-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes as-scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes as-line-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}

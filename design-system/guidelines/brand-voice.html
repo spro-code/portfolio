@@ -1,0 +1,35 @@
+<!-- @dsCard group="Brand" viewport="700x240" name="Voice & tone" subtitle="Warm, direct, expert. We speak to educators as peers, not users." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-card); padding: 26px 30px; font-family: var(--font-sans); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .h { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  .yes .h { color: var(--success); }
+  .no .h { color: var(--danger); }
+  .line { font-size: 14.5px; line-height: 1.5; padding: 7px 0; border-top: 1px solid var(--border-faint); color: var(--text-body); }
+  .yes .line::before { content: "“"; color: var(--evergreen-400); }
+  .yes .line::after { content: "”"; color: var(--evergreen-400); }
+  .no .line { color: var(--text-faint); text-decoration: line-through; text-decoration-color: var(--rust-300); }
+</style>
+</head>
+<body>
+  <div class="cols">
+    <div class="yes">
+      <div class="h">We say</div>
+      <div class="line">Collect data on a goal with one tap.</div>
+      <div class="line">You taught the lesson. We'll handle the paperwork.</div>
+      <div class="line">See exactly where each student stands.</div>
+    </div>
+    <div class="no">
+      <div class="h">We avoid</div>
+      <div class="line">Leverage our solution to optimize outcomes.</div>
+      <div class="line">Best-in-class, end-to-end synergy.</div>
+      <div class="line">Users can utilize the platform's functionality.</div>
+    </div>
+  </div>
+</body>
+</html>

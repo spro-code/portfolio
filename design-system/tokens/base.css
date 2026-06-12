@@ -1,0 +1,73 @@
+/* ============================================================
+   AbleSpace — Base reset & primitives
+   Minimal, opinionated. Sets warm paper canvas + reading defaults.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; color: var(--text-strong); font-weight: var(--fw-semibold); }
+p { margin: 0; }
+a { color: var(--text-link); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+img, svg, video { display: block; max-width: 100%; }
+::selection { background: var(--interactive-soft); color: var(--evergreen-900); }
+
+:focus-visible { outline: none; box-shadow: var(--glow-focus); border-radius: var(--r-sm); }
+
+/* Numeric/tabular figures for data & metrics */
+.as-tnum { font-variant-numeric: tabular-nums; }
+
+/* ---- Layout helpers ---- */
+.as-container {
+  width: 100%;
+  max-width: var(--width-content);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.as-container--wide { max-width: var(--width-wide); }
+.as-container--prose { max-width: var(--width-prose); }
+.as-section { padding-block: var(--section-y); }
+
+/* Hairline divider */
+.as-rule { height: var(--hairline); background: var(--border-soft); border: 0; }
+
+/* ---- Scroll-reveal utility ----
+   Add .as-reveal to elements; toggle [data-revealed] on scroll
+   (IntersectionObserver). Falls back to visible without JS / when
+   reduced motion is preferred. */
+@media (prefers-reduced-motion: no-preference) {
+  .as-reveal { opacity: 0; transform: translateY(24px); }
+  .as-reveal[data-revealed] {
+    opacity: 1;
+    transform: none;
+    transition: opacity var(--dur-reveal) var(--ease-out),
+                transform var(--dur-reveal) var(--ease-out);
+  }
+  .as-reveal[data-reveal-delay="1"][data-revealed] { transition-delay: 90ms; }
+  .as-reveal[data-reveal-delay="2"][data-revealed] { transition-delay: 180ms; }
+  .as-reveal[data-reveal-delay="3"][data-revealed] { transition-delay: 270ms; }
+}
+
+/* Dark narrative section scope */
+.as-on-dark {
+  background: var(--surface-inverse);
+  color: var(--text-on-dark);
+}
+.as-on-dark h1, .as-on-dark h2, .as-on-dark h3,
+.as-on-dark h4, .as-on-dark h5, .as-on-dark h6 { color: var(--text-on-dark); }

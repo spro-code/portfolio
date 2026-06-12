@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AbleSpace Design System</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface-page); font-family: var(--font-sans); color: var(--text-body); }
+  .wrap { max-width: var(--width-content); margin: 0 auto; padding-inline: var(--gutter); }
+
+  header.top { display: flex; align-items: center; gap: 12px; padding: 18px var(--gutter); border-bottom: 1px solid var(--border-faint); position: sticky; top: 0; background: color-mix(in oklab, var(--surface-page) 85%, transparent); backdrop-filter: blur(10px); z-index: 5; }
+  header.top img { width: 28px; height: 28px; }
+  header.top .wm { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; color: var(--stone-900); }
+  header.top .wm .s { color: var(--evergreen-700); }
+  header.top .tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin-left: 8px; padding: 4px 8px; border: 1px solid var(--border-soft); border-radius: var(--r-pill); }
+
+  .hero { padding-block: clamp(56px, 7vw, 120px) clamp(40px, 5vw, 72px); }
+  .hero .eyebrow { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--evergreen-600); display: inline-flex; align-items: center; gap: 10px; }
+  .hero .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; opacity: 0.5; }
+  .hero h1 { font-family: var(--font-display); font-weight: 500; font-size: var(--text-hero); line-height: 1.02; letter-spacing: -0.03em; color: var(--text-strong); margin: 22px 0 0; max-width: 18ch; text-wrap: balance; }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--evergreen-700); }
+  .hero p { font-size: var(--text-xl); line-height: 1.5; color: var(--text-muted); margin: 24px 0 0; max-width: 56ch; }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+  .pill { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; color: var(--text-body); background: var(--surface-card); border: 1px solid var(--border-soft); border-radius: var(--r-pill); padding: 7px 13px; box-shadow: var(--shadow-xs); }
+  .pill svg { width: 15px; height: 15px; color: var(--evergreen-600); }
+
+  .section { padding-block: clamp(32px, 4vw, 56px); }
+  .sec-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 20px; }
+
+  /* foundations strip */
+  .found { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
+  .panel { background: var(--surface-card); border: 1px solid var(--border-faint); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); padding: 22px; }
+  .swatches { display: flex; border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-xs); }
+  .swatches div { flex: 1; height: 60px; }
+  .swrow { display: flex; gap: 10px; margin-top: 14px; }
+  .swrow .chip { flex: 1; height: 40px; border-radius: var(--r-sm); box-shadow: var(--ring-card); }
+  .typestack .d { font-family: var(--font-display); font-weight: 500; font-size: 34px; letter-spacing: -0.02em; color: var(--text-strong); line-height: 1.05; }
+  .typestack .d em { font-style: italic; font-weight: 400; color: var(--evergreen-700); }
+  .typestack .b { font-size: 14px; color: var(--text-muted); margin-top: 10px; line-height: 1.6; }
+  .typestack .m { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay-500); margin-top: 14px; }
+
+  /* nav cards */
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  a.card { text-decoration: none; color: inherit; background: var(--surface-card); border: 1px solid var(--border-faint); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); padding: 24px; display: flex; flex-direction: column; gap: 10px; transition: box-shadow var(--dur) var(--ease-out), transform var(--dur) var(--ease-out); }
+  a.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  a.card .ic { display: inline-flex; width: 42px; height: 42px; border-radius: var(--r-md); background: var(--accent-soft); color: var(--evergreen-700); align-items: center; justify-content: center; }
+  a.card h3 { font-size: 18px; font-weight: 600; color: var(--text-strong); }
+  a.card p { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+  a.card .go { font-family: var(--font-mono); font-size: 12px; color: var(--evergreen-700); display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
+  a.card .go svg { width: 14px; height: 14px; }
+
+  .note { font-size: 13px; color: var(--text-faint); line-height: 1.6; background: var(--warning-soft); border: 1px solid color-mix(in oklab, var(--warning) 30%, transparent); border-radius: var(--r-md); padding: 14px 16px; }
+  footer { padding-block: 48px; color: var(--text-faint); font-size: 13px; border-top: 1px solid var(--border-faint); margin-top: 40px; }
+  @media (max-width: 760px) { .found, .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <header class="top">
+    <img src="assets/logo-mark.svg" alt="AbleSpace">
+    <span class="wm">Able<span class="s">Space</span></span>
+    <span class="tag">Design System</span>
+  </header>
+
+  <section class="hero wrap">
+    <span class="eyebrow">AbleSpace Design System · v1</span>
+    <h1>Every data point <em>tells a story.</em></h1>
+    <p>The foundations, components, and storytelling modules behind AbleSpace — enterprise product clarity with the craft of a modern product studio, for the most human work in education.</p>
+    <div class="pills">
+      <span class="pill"><i data-lucide="palette"></i>173 tokens</span>
+      <span class="pill"><i data-lucide="component"></i>24 components</span>
+      <span class="pill"><i data-lucide="book-open"></i>7 storytelling modules</span>
+      <span class="pill"><i data-lucide="layout-dashboard"></i>2 UI kits</span>
+      <span class="pill"><i data-lucide="type"></i>Newsreader · Hanken · JetBrains Mono</span>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="sec-label">Foundations</div>
+    <div class="found">
+      <div class="panel">
+        <div class="swatches">
+          <div style="background:var(--evergreen-900)"></div>
+          <div style="background:var(--evergreen-700)"></div>
+          <div style="background:var(--evergreen-500)"></div>
+          <div style="background:var(--spring-500)"></div>
+          <div style="background:var(--clay-400)"></div>
+          <div style="background:var(--stone-100)"></div>
+          <div style="background:var(--surface-page)"></div>
+        </div>
+        <div class="swrow">
+          <div class="chip" style="background:var(--amber-400)"></div>
+          <div class="chip" style="background:var(--rust-400)"></div>
+          <div class="chip" style="background:var(--slate-400)"></div>
+          <div class="chip" style="background:var(--evergreen-100)"></div>
+          <div class="chip" style="background:var(--clay-200)"></div>
+          <div class="chip" style="background:var(--stone-300)"></div>
+        </div>
+        <div class="typestack" style="margin-top:18px">
+          <div class="m" style="margin-top:0">Warm paper · evergreen · spring · clay</div>
+        </div>
+      </div>
+      <div class="panel typestack">
+        <div class="d">From observation<br>to <em>insight.</em></div>
+        <div class="b">Editorial serif for narrative, a clean grotesque for the product OS, mono for labels and data.</div>
+        <div class="m">02 — Typography</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="sec-label">Explore</div>
+    <div class="grid">
+      <a class="card" href="ui_kits/marketing/index.html">
+        <span class="ic"><i data-lucide="panels-top-left"></i></span>
+        <h3>Marketing site</h3>
+        <p>An editorial, scroll-driven landing page built from the storytelling modules — problem, journey, solution, impact.</p>
+        <span class="go">Open kit <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="card" href="ui_kits/web_app/index.html">
+        <span class="ic"><i data-lucide="layout-dashboard"></i></span>
+        <h3>Web app</h3>
+        <p>Caseload dashboard, student records, and the one-tap data-collection drawer — the product surface.</p>
+        <span class="go">Open kit <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="card" href="guidelines/type-pairing.html">
+        <span class="ic"><i data-lucide="type"></i></span>
+        <h3>Foundation cards</h3>
+        <p>Color, type, spacing, motion, and brand specimens. Every card in the Design System tab links the live tokens.</p>
+        <span class="go">See type pairing <i data-lucide="arrow-right"></i></span>
+      </a>
+      <a class="card" href="components/storytelling/storytelling.card.html">
+        <span class="ic"><i data-lucide="book-open"></i></span>
+        <h3>Storytelling modules</h3>
+        <p>Challenge, Opportunity, Insight, Solution, Metrics, Learnings, Future — plus Journey, MetricStat & PullQuote.</p>
+        <span class="go">View components <i data-lucide="arrow-right"></i></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="note">
+      <strong>Note:</strong> Fonts (Newsreader, Hanken Grotesk, JetBrains Mono) are CDN substitutes and the logo mark is a placeholder, since no brand binaries were provided. Component cards &amp; UI kits render once the design-system bundle publishes. See <strong>readme.md</strong> for the full guide and caveats.
+    </div>
+  </section>
+
+  <footer class="wrap">© 2026 AbleSpace Design System · authored from public product context + brief</footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

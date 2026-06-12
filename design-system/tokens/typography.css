@@ -1,0 +1,123 @@
+/* ============================================================
+   AbleSpace — Typography
+   Editorial serif display (Newsreader) + grotesque UI (Hanken
+   Grotesk) + mono labels/data (JetBrains Mono).
+   ============================================================ */
+
+:root {
+  /* Families */
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Weights */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500;  /* @kind font */
+  --fw-semibold: 600;/* @kind font */
+  --fw-bold: 700;    /* @kind font */
+
+  /* Fluid display scale (clamped for responsive storytelling) */
+  --text-hero:    clamp(3.25rem, 1.6rem + 6.6vw, 6.5rem);   /* @kind spacing */ /* 52 → 104 */
+  --text-display: clamp(2.5rem, 1.5rem + 4.2vw, 4.25rem);   /* @kind spacing */ /* 40 → 68 */
+  --text-title-1: clamp(2rem, 1.4rem + 2.4vw, 3rem);        /* @kind spacing */ /* 32 → 48 */
+  --text-title-2: clamp(1.625rem, 1.3rem + 1.4vw, 2.25rem); /* @kind spacing */ /* 26 → 36 */
+  --text-title-3: 1.5rem;   /* 24 */
+
+  /* Fixed UI / body scale */
+  --text-xl:   1.375rem;  /* 22 — lead paragraph */
+  --text-lg:   1.125rem;  /* 18 */
+  --text-base: 1rem;      /* 16 — body */
+  --text-sm:   0.875rem;  /* 14 — UI default */
+  --text-xs:   0.8125rem; /* 13 — meta */
+  --text-2xs:  0.6875rem; /* 11 — eyebrow/mono labels */
+
+  /* Line heights */
+  --lh-tight: 1.02;   /* @kind other */ /* hero display */
+  --lh-snug: 1.12;    /* @kind other */ /* titles */
+  --lh-heading: 1.2;  /* @kind other */
+  --lh-body: 1.62;    /* @kind other */ /* long-form reading */
+  --lh-ui: 1.4;       /* @kind other */
+
+  /* Letter spacing */
+  --ls-tighter: -0.03em;  /* big display @kind other */
+  --ls-tight: -0.015em;   /* titles @kind other */
+  --ls-normal: 0em;       /* @kind other */
+  --ls-wide: 0.04em;      /* @kind other */
+  --ls-eyebrow: 0.16em;   /* uppercase mono eyebrows @kind other */
+}
+
+/* ---- Reusable type roles (utility classes) ---- */
+.as-hero {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tighter);
+  color: var(--text-strong);
+}
+.as-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-display);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-strong);
+}
+.as-title-1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-title-1);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-strong);
+}
+.as-title-2 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-title-2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-strong);
+}
+.as-title-3 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-title-3);
+  line-height: var(--lh-heading);
+  color: var(--text-strong);
+}
+.as-lead {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-xl);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.as-body {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-base);
+  line-height: var(--lh-body);
+  color: var(--text-body);
+}
+.as-ui {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-sm);
+  line-height: var(--lh-ui);
+  color: var(--text-body);
+}
+.as-eyebrow {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-2xs);
+  line-height: 1;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.as-serif-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: var(--fw-regular);
+}

@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Sancharini Basak — Portfolio
+   Built on the AbleSpace design language.
+   Warm paper + evergreen + spring-green, editorial serif display.
+   ============================================================ */
+
+:root {
+  /* Stone ramp */
+  --stone-50: #fbf8f2;
+  --stone-100: #f4efe5;
+  --stone-150: #ece5d7;
+  --stone-200: #e0d8c7;
+  --stone-300: #ccc2ad;
+  --stone-400: #a89e86;
+  --stone-500: #847b66;
+  --stone-600: #61594a;
+  --stone-700: #443e33;
+  --stone-800: #2a2620;
+  --stone-900: #181611;
+  --stone-950: #0f0e0a;
+
+  /* Evergreen */
+  --evergreen-50: #eaf3ee;
+  --evergreen-400: #3e8a64;
+  --evergreen-600: #1b5c45;
+  --evergreen-700: #154836;
+  --evergreen-800: #103729;
+  --evergreen-900: #0c2b20;
+
+  --spring-500: #21b97b;
+  --clay-400: #cc7c4f;
+
+  /* ---- Semantic (LIGHT) ---- */
+  --surface-page: #fbf8f2;
+  --surface-sunk: #f4efe5;
+  --surface-card: #ffffff;
+  --surface-card-2: #fbf8f2;
+  --surface-inverse: #0c2b20;
+
+  --text-strong: #181611;
+  --text-body: #2a2620;
+  --text-muted: #61594a;
+  --text-faint: #847b66;
+
+  --accent: #154836;
+  --accent-hover: #103729;
+  --accent-soft: #eaf3ee;
+  --accent-on: #fbf8f2;
+
+  --interactive: #169a66;
+  --interactive-soft: rgba(33, 185, 123, 0.14);
+  --warm: #b86038;
+  --warm-soft: #f6e3d6;
+
+  --border-faint: rgba(24, 22, 17, 0.07);
+  --border-soft: rgba(24, 22, 17, 0.12);
+  --border-strong: rgba(24, 22, 17, 0.2);
+
+  --focus-ring: rgba(33, 185, 123, 0.45);
+
+  /* fonts injected by next/font in layout */
+  color-scheme: light;
+}
+
+.dark {
+  /* ---- Semantic (DARK — evergreen night) ---- */
+  --surface-page: #0c100d;
+  --surface-sunk: #11160f;
+  --surface-card: #161c17;
+  --surface-card-2: #11160f;
+  --surface-inverse: #081a14;
+
+  --text-strong: #f4efe5;
+  --text-body: #e6dfd1;
+  --text-muted: #a89e86;
+  --text-faint: #847b66;
+
+  --accent: #6bac8a;
+  --accent-hover: #9fcbb2;
+  --accent-soft: rgba(33, 185, 123, 0.12);
+  --accent-on: #081a14;
+
+  --interactive: #3fcf92;
+  --interactive-soft: rgba(63, 207, 146, 0.16);
+  --warm: #dc9e78;
+  --warm-soft: rgba(204, 124, 79, 0.18);
+
+  --border-faint: rgba(244, 239, 229, 0.08);
+  --border-soft: rgba(244, 239, 229, 0.14);
+  --border-strong: rgba(244, 239, 229, 0.24);
+
+  --focus-ring: rgba(63, 207, 146, 0.5);
+
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--border-soft);
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background-color: var(--surface-page);
+    color: var(--text-body);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s var(--ease-out, ease),
+      color 0.4s var(--ease-out, ease);
+  }
+  ::selection {
+    background: var(--interactive-soft);
+    color: var(--text-strong);
+  }
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+    border-radius: 4px;
+  }
+  h1, h2, h3, h4 {
+    color: var(--text-strong);
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono), monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--text-faint);
+  }
+  .serif-em {
+    font-family: var(--font-display), serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .link-underline {
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1.5px;
+  }
+  /* Paper grain — extremely subtle, no noise textures, just a tonal vignette */
+  .paper-edge {
+    background:
+      radial-gradient(120% 80% at 50% -10%, color-mix(in srgb, var(--accent) 5%, transparent), transparent 60%);
+  }
+}
+
+/* Sketch draw-on: framer-motion controls pathLength, but provide a static
+   fallback so paths are visible without JS / reduced motion. */
+.sketch-path {
+  stroke: var(--text-strong);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sketch-path {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* Print — resume saves cleanly to PDF */
+@media print {
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+  :root {
+    --surface-page: #ffffff;
+    --text-strong: #111111;
+    --text-body: #222222;
+    --text-muted: #444444;
+  }
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+  main {
+    padding-top: 0 !important;
+  }
+  .pt-32 {
+    padding-top: 1rem !important;
+  }
+  * {
+    box-shadow: none !important;
+  }
+}
+
+/* Custom cursor — hide the native one only when the JS cursor is active */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Marquee for the "still zooming out" identity ticker */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}

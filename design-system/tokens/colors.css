@@ -1,0 +1,124 @@
+/* ============================================================
+   AbleSpace — Color System
+   Warm editorial neutrals + evergreen growth brand + clay warmth.
+   Raw ramps first, semantic aliases below.
+   ============================================================ */
+
+:root {
+  /* --- Stone: warm neutral ramp (paper → ink) --- */
+  --stone-50:  #FBF8F2;  /* lightest paper */
+  --stone-100: #F4EFE5;
+  --stone-150: #ECE5D7;
+  --stone-200: #E0D8C7;
+  --stone-300: #CcC2AD;
+  --stone-400: #A89E86;
+  --stone-500: #847B66;
+  --stone-600: #61594A;
+  --stone-700: #443E33;
+  --stone-800: #2A2620;
+  --stone-900: #181611;  /* warm near-black ink */
+  --stone-950: #0F0E0A;
+
+  /* --- Evergreen: primary brand (deep, confident, growth) --- */
+  --evergreen-50:  #EAF3EE;
+  --evergreen-100: #CDE5D8;
+  --evergreen-200: #9FCBB2;
+  --evergreen-300: #6BAC8A;
+  --evergreen-400: #3E8A64;
+  --evergreen-500: #237A5C;
+  --evergreen-600: #1B5C45;
+  --evergreen-700: #154836;
+  --evergreen-800: #103729;
+  --evergreen-900: #0C2B20;  /* near-black pine */
+
+  /* --- Spring: vivid interactive / signal green --- */
+  --spring-300: #6FE3AE;
+  --spring-400: #3FCF92;
+  --spring-500: #21B97B;
+  --spring-600: #169A66;
+
+  /* --- Clay: warm human secondary (terracotta) --- */
+  --clay-100: #F6E3D6;
+  --clay-200: #EBC3A8;
+  --clay-300: #DC9E78;
+  --clay-400: #CC7C4F;
+  --clay-500: #B86038;
+  --clay-600: #984B2B;
+
+  /* --- Signal hues --- */
+  --amber-300: #F2C879;
+  --amber-400: #E5A93C;
+  --amber-500: #C98A21;
+  --rust-300:  #E89C84;
+  --rust-400:  #D2674A;
+  --rust-500:  #B14730;
+  --slate-300: #9FB6C4;
+  --slate-400: #5E86A0;
+  --slate-500: #3E647D;
+
+  /* pure */
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components, not raw ramps
+     ============================================================ */
+
+  /* Surfaces */
+  --surface-page:    var(--stone-50);   /* app/page background */
+  --surface-sunk:    var(--stone-100);  /* recessed wells, code */
+  --surface-card:    var(--white);      /* raised cards */
+  --surface-card-2:  var(--stone-50);   /* nested card */
+  --surface-inverse: var(--evergreen-900); /* dark narrative sections */
+  --surface-inverse-2: var(--stone-900);
+  --surface-brand:   var(--evergreen-700);
+  --surface-overlay: rgba(15, 14, 10, 0.55); /* scrim */
+
+  /* Text */
+  --text-strong:   var(--stone-900);  /* headlines */
+  --text-body:     var(--stone-800);  /* body copy */
+  --text-muted:    var(--stone-600);  /* secondary */
+  --text-faint:    var(--stone-500);  /* captions, meta */
+  --text-on-dark:  var(--stone-50);
+  --text-on-dark-muted: rgba(244, 239, 229, 0.66);
+  --text-brand:    var(--evergreen-700);
+  --text-link:     var(--evergreen-600);
+
+  /* Borders & hairlines */
+  --border-faint:  rgba(24, 22, 17, 0.07);
+  --border-soft:   rgba(24, 22, 17, 0.12);
+  --border-strong: rgba(24, 22, 17, 0.20);
+  --border-on-dark: rgba(244, 239, 229, 0.16);
+
+  /* Interactive / accent */
+  --accent:          var(--evergreen-700);
+  --accent-hover:    var(--evergreen-800);
+  --accent-press:    var(--evergreen-900);
+  --accent-soft:     var(--evergreen-50);
+  --accent-on:       var(--stone-50);     /* text/icon on accent */
+  --interactive:     var(--spring-500);   /* live, active, focus glows */
+  --interactive-soft: rgba(33, 185, 123, 0.14);
+  --warm:            var(--clay-400);     /* human warmth accent */
+  --warm-soft:       var(--clay-100);
+
+  /* Focus ring */
+  --focus-ring: rgba(33, 185, 123, 0.45);
+
+  /* Status */
+  --success:      var(--spring-600);
+  --success-soft: rgba(33, 185, 123, 0.14);
+  --warning:      var(--amber-500);
+  --warning-soft: rgba(229, 169, 60, 0.16);
+  --danger:       var(--rust-500);
+  --danger-soft:  rgba(210, 103, 74, 0.15);
+  --info:         var(--slate-500);
+  --info-soft:    rgba(94, 134, 160, 0.16);
+
+  /* Data-viz categorical (graphs, progress) */
+  --data-1: var(--evergreen-600);
+  --data-2: var(--clay-400);
+  --data-3: var(--slate-400);
+  --data-4: var(--amber-400);
+  --data-5: var(--spring-500);
+  --data-6: var(--stone-500);
+}

@@ -1,0 +1,39 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Iconography — Lucide" subtitle="Lucide, 1.75–2px stroke, rounded joins. Line style, never filled." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; background: var(--surface-card); padding: 24px 26px; font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
+  .ic { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 4px; border-radius: var(--r-md); border: 1px solid var(--border-faint); }
+  .ic svg { width: 22px; height: 22px; color: var(--evergreen-700); stroke-width: 1.85; }
+  .ic span { font-family: var(--font-mono); font-size: 9px; color: var(--text-faint); }
+  .note { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-top: 14px; letter-spacing: 0.04em; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="ic"><i data-lucide="target"></i><span>target</span></div>
+    <div class="ic"><i data-lucide="bar-chart-3"></i><span>chart</span></div>
+    <div class="ic"><i data-lucide="calendar-clock"></i><span>schedule</span></div>
+    <div class="ic"><i data-lucide="users-round"></i><span>team</span></div>
+    <div class="ic"><i data-lucide="clipboard-check"></i><span>collect</span></div>
+    <div class="ic"><i data-lucide="sparkles"></i><span>ai</span></div>
+    <div class="ic"><i data-lucide="bell"></i><span>alerts</span></div>
+    <div class="ic"><i data-lucide="trending-up"></i><span>progress</span></div>
+    <div class="ic"><i data-lucide="file-text"></i><span>report</span></div>
+    <div class="ic"><i data-lucide="graduation-cap"></i><span>student</span></div>
+    <div class="ic"><i data-lucide="shield-check"></i><span>secure</span></div>
+    <div class="ic"><i data-lucide="check-circle-2"></i><span>done</span></div>
+    <div class="ic"><i data-lucide="notebook-pen"></i><span>note</span></div>
+    <div class="ic"><i data-lucide="layout-dashboard"></i><span>dash</span></div>
+    <div class="ic"><i data-lucide="compass"></i><span>journey</span></div>
+    <div class="ic"><i data-lucide="lightbulb"></i><span>insight</span></div>
+  </div>
+  <div class="note">Lucide · stroke 1.75–2px · rounded caps &amp; joins · currentColor</div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

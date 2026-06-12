@@ -1,0 +1,27 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Corner radii" subtitle="Restrained, editorial. Pills for chips; large radii for cards." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-card); padding: 24px; font-family: var(--font-sans); }
+  .row { display: flex; gap: 16px; align-items: flex-end; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .box { width: 84px; height: 64px; background: var(--evergreen-50); border: 1.5px solid var(--evergreen-300); }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); text-align: center; }
+  .lab b { display: block; color: var(--text-strong); font-size: 11px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="border-radius:var(--r-xs)"></div><div class="lab"><b>xs</b>4px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--r-sm)"></div><div class="lab"><b>sm</b>6px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--r-md)"></div><div class="lab"><b>md</b>10px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--r-lg)"></div><div class="lab"><b>lg</b>16px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--r-xl)"></div><div class="lab"><b>xl</b>22px</div></div>
+    <div class="item"><div class="box" style="border-radius:var(--r-2xl)"></div><div class="lab"><b>2xl</b>30px</div></div>
+    <div class="item"><div class="box" style="width:64px;border-radius:var(--r-pill)"></div><div class="lab"><b>pill</b>999</div></div>
+  </div>
+</body>
+</html>
